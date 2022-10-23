@@ -5,6 +5,9 @@ public enum StudyProfile {
     HISTORY("История"),
     PHILOSOPHY("Философия"),
     PSYCHOLOGY("Психология"),
+    PHYSICS("Физика"),
+    LINGUISTICS("Лингвистика"),
+    MATHEMATICS("Математика"),
     ECONOMICS("Экономика");
 
     private final String profileName;

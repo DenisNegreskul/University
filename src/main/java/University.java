@@ -5,6 +5,9 @@ public class University {
     private int yearOfFoundation;
     private StudyProfile mainProfile;
 
+    public University() {
+    }
+
     public University(String id, String fullName, String shortName, int yearOfFoundation, StudyProfile mainProfile) {
         this.id = id;
         this.fullName = fullName;
