@@ -4,9 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4fe6035-2cda-4b14-aa8e-8460c9751f3a" name="Changes" comment="First Commit">
+    <list default="true" id="b4fe6035-2cda-4b14-aa8e-8460c9751f3a" name="Changes" comment="Third Commit">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/comparator/StudentAvgExamScoreComparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/comparator/StudentComparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/comparator/StudentComparatorType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/comparator/StudentCourseComparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/comparator/StudentFullNameComparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/comparator/StudentUniversityIdComparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/comparator/UniversityComparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/comparator/UniversityComparatorType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/comparator/UniversityFullNameComparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/comparator/UniversityIdComparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/comparator/UniversityProfileComparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/comparator/UniversityShortNameComparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/comparator/UniversityYearComparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/ComparatorSelector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ExcelReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ExcelReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/StudyProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/StudyProfile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/University.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/University.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +35,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Enum" />
         <option value="Class" />
       </list>
@@ -33,23 +53,31 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2Fx8o7QQnsB4dfUX0YkstIvUhK0" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "configurable.group.build"
   }
-}</component>
-  <component name="RunManager">
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="comparator" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="University" />
@@ -57,9 +85,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="University-1.0-SNAPSHOT.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/target/University-1.0-SNAPSHOT.jar" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="JAR Application.University-1.0-SNAPSHOT.jar" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -75,6 +108,7 @@
       <workItem from="1665422551750" duration="9415000" />
       <workItem from="1666460356811" duration="13134000" />
       <workItem from="1666549366548" duration="309000" />
+      <workItem from="1667314493072" duration="7038000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1665485940717</created>
@@ -83,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665485940717</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Third Commit">
+      <created>1666553417347</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1666553417347</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -102,6 +143,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="First Commit" />
+    <MESSAGE value="Third Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Third Commit" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

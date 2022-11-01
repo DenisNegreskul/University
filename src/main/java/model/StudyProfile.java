@@ -1,3 +1,5 @@
+package model;
+
 public enum StudyProfile {
     MEDICINE("Медицина"),
     ENGINEERING("Инженерное дело"),
