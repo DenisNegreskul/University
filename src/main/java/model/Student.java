@@ -54,11 +54,7 @@ public class Student {
 
     @Override
     public String toString() {
-        return "model.Student{" +
-                "fullName='" + fullName + '\'' +
-                ", universityId='" + universityId + '\'' +
-                ", currentCourseNumber=" + currentCourseNumber +
-                ", avgExamScore=" + avgExamScore +
-                '}';
+        return String.format("Student [fullName = %-15s, universityId = %-10s, currentCourseNumber = %d, avgExamScore = %.1f]",
+                fullName, universityId, currentCourseNumber, avgExamScore);
     }
 }

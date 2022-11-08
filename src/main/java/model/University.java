@@ -65,12 +65,7 @@ public class University {
 
     @Override
     public String toString() {
-        return "model.University{" +
-                "id='" + id + '\'' +
-                ", fullName='" + fullName + '\'' +
-                ", shortName='" + shortName + '\'' +
-                ", yearOfFoundation=" + yearOfFoundation +
-                ", mainProfile=" + mainProfile +
-                '}';
+        return String.format("University [ id = %-10s, fullName = %-55s, shortName = %5s, yearOfFoundation = %d, mainProfile = %15s]",
+                id, fullName, shortName, yearOfFoundation, mainProfile);
     }
 }

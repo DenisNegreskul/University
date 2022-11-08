@@ -1,5 +1,7 @@
-import model.*;
-import comparator.*;
+import comparator.StudentComparatorType;
+import comparator.UniversityComparatorType;
+import model.Student;
+import model.University;
 
 import java.util.List;
 
@@ -11,10 +13,8 @@ public class Main {
         System.out.println("Students:");
         for (StudentComparatorType studentComparatorType : StudentComparatorType.values()) {
             System.out.println("Sorted by " + studentComparatorType + ":");
-            StudentComparator studentComparator =
-                    ComparatorSelector.getStudentComparator(studentComparatorType);
             students.stream()
-                    .sorted(studentComparator)
+                    .sorted(studentComparatorType.getComparator())
                     .forEach(System.out::println);
         }
 
@@ -22,10 +22,8 @@ public class Main {
         System.out.println("\nUniversities:");
         for (UniversityComparatorType universityComparatorType : UniversityComparatorType.values()) {
             System.out.println("Sorted by " + universityComparatorType + ":");
-            UniversityComparator universityComparator =
-                    ComparatorSelector.getUniversityComparator(universityComparatorType);
             universities.stream()
-                        .sorted(universityComparator)
+                        .sorted(universityComparatorType.getComparator())
                         .forEach(System.out::println);
         }
     }
