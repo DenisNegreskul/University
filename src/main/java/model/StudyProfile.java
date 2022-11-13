@@ -14,11 +14,11 @@ public enum StudyProfile {
 
     private final String profileName;
 
-    public String getProfileName() {
-        return profileName;
-    }
-
     StudyProfile(String profileName) {
         this.profileName = profileName;
+    }
+
+    public String getProfileName() {
+        return profileName;
     }
 }

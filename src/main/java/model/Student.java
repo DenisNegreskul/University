@@ -1,10 +1,14 @@
 package model;
 
-public class Student {
-    private String fullName;
-    private String universityId;
-    private int currentCourseNumber;
-    private double avgExamScore;
+import com.google.gson.annotations.SerializedName;
+
+import java.io.Serializable;
+
+public class Student implements Serializable {
+    @SerializedName("Полное имя") private String fullName;
+    @SerializedName("ID университета") private String universityId;
+    @SerializedName("Курс") private int currentCourseNumber;
+    @SerializedName("Средняя оценка за экзамен") private double avgExamScore;
 
     public Student() {
     }

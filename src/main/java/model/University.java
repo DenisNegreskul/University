@@ -1,11 +1,15 @@
 package model;
 
-public class University {
-    private String id;
-    private String fullName;
-    private String shortName;
-    private int yearOfFoundation;
-    private StudyProfile mainProfile;
+import com.google.gson.annotations.SerializedName;
+
+import java.io.Serializable;
+
+public class University implements Serializable {
+    @SerializedName("ID университета") private String id;
+    @SerializedName("Полное название")private String fullName;
+    @SerializedName("Аббревиатура")private String shortName;
+    @SerializedName("Год основания")private int yearOfFoundation;
+    @SerializedName("Основной профиль обучения")private StudyProfile mainProfile;
 
     public University() {
     }
@@ -65,7 +69,7 @@ public class University {
 
     @Override
     public String toString() {
-        return String.format("University [ id = %-10s, fullName = %-55s, shortName = %5s, yearOfFoundation = %d, mainProfile = %15s]",
+        return String.format("University [ id = %-10s, fullName = %-50s, shortName = %5s, yearOfFoundation = %d, mainProfile = %s]",
                 id, fullName, shortName, yearOfFoundation, mainProfile);
     }
 }
