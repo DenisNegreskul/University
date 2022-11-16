@@ -1,6 +1,6 @@
 package excel;
 
-import model.Statistics;
+import statistics.Statistics;
 import org.apache.poi.xssf.usermodel.*;
 
 import java.io.FileOutputStream;

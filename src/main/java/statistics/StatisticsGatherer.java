@@ -1,4 +1,5 @@
-import model.Statistics;
+package statistics;
+
 import model.Student;
 import model.University;
 
