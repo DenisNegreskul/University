@@ -1,5 +1,7 @@
 import comparator.StudentComparatorType;
 import comparator.UniversityComparatorType;
+import excel.ExcelReader;
+import excel.ExcelWriter;
 import model.Student;
 import model.University;
 import serialization.JsonUtil;
@@ -7,12 +9,18 @@ import serialization.JsonUtil;
 import java.util.List;
 
 public class Main {
-    private static final String fileName = "src/main/resources/universityInfo.xlsx";
-    private static final List<University> universities = ExcelReader.readUniversities(fileName);
-    private static final List<Student> students = ExcelReader.readStudents(fileName);
+    private static final String inputFileName = "src/main/resources/universityInfo.xlsx";
+    private static final String outputFileName = "src/main/resources/statistics.xlsx";
+    private static final List<University> universities = ExcelReader.readUniversities(inputFileName);
+    private static final List<Student> students = ExcelReader.readStudents(inputFileName);
 
     public static void main(String[] args) {
         //sort();
+        //testSerialization();
+        ExcelWriter.writeStatisticsToFile(StatisticsGatherer.gatherStatistics(students, universities), outputFileName);
+    }
+
+    private static void testSerialization() {
         String studentsJson = JsonUtil.serialize(students);
         System.out.println("Students in JSon:");
         System.out.println(studentsJson);
@@ -27,10 +35,10 @@ public class Main {
 
         System.out.println("\nEach student in JSon:");
         students.forEach(student -> {
-                    String studentJson = JsonUtil.serialize(student);
-                    System.out.println(studentJson);
-                    System.out.println(JsonUtil.deserializeStudent(studentJson));
-                });
+            String studentJson = JsonUtil.serialize(student);
+            System.out.println(studentJson);
+            System.out.println(JsonUtil.deserializeStudent(studentJson));
+        });
 
         System.out.println("\nEach university in JSon:");
         universities.forEach(university -> {
@@ -53,8 +61,8 @@ public class Main {
         for (UniversityComparatorType universityComparatorType : UniversityComparatorType.values()) {
             System.out.println("Sorted by " + universityComparatorType + ":");
             universities.stream()
-                        .sorted(universityComparatorType.getComparator())
-                        .forEach(System.out::println);
+                    .sorted(universityComparatorType.getComparator())
+                    .forEach(System.out::println);
         }
     }
 }
