@@ -5,11 +5,15 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import model.Student;
 import model.University;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Collection;
 import java.util.List;
 
 public class JsonUtil {
+
+    private static final Logger logger = LoggerFactory.getLogger(JsonUtil.class);
 
     private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
 

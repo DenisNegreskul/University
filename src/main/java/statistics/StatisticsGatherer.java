@@ -2,6 +2,8 @@ package statistics;
 
 import model.Student;
 import model.University;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -12,10 +14,13 @@ import java.util.OptionalDouble;
 
 public class StatisticsGatherer {
 
+    private static final Logger logger = LoggerFactory.getLogger(StatisticsGatherer.class);
+
     private StatisticsGatherer() {
     }
 
     public static Collection<Statistics> gatherStatistics(Collection<Student> students, Collection<University> universities) {
+        logger.info("Gathering statistics started");
         List<Statistics> statisticsList = new ArrayList<>();
         universities.stream()
                 .map(University::getMainProfile)
@@ -47,7 +52,7 @@ public class StatisticsGatherer {
                     statistics.setUniversityNames(universityNamesList);
                     statistics.setAmountOfUniversities(universityNamesList.size());
                 });
-
+        logger.info("Gathering statistics ended successfully");
         return statisticsList;
     }
 }

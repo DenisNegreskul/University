@@ -6,6 +6,8 @@ import model.University;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -15,15 +17,18 @@ import java.util.List;
 
 public class ExcelReader {
 
+    private static final Logger logger = LoggerFactory.getLogger(ExcelReader.class);
+
     private ExcelReader() {
     }
 
     public static List<Student> readStudents(String fileName) {
+        List<Student> students = new ArrayList<>();
         try (XSSFWorkbook workbook = new XSSFWorkbook(new FileInputStream(fileName))) {
+            logger.info("Reading students from {} started", fileName);
             XSSFSheet sheet = workbook.getSheetAt(0);
             Iterator<Row> rowIterator = sheet.rowIterator();
             rowIterator.next();
-            List<Student> students = new ArrayList<>();
             while (rowIterator.hasNext()) {
                 Row row = rowIterator.next();
                 Student student = new Student();
@@ -33,18 +38,21 @@ public class ExcelReader {
                         .setAvgExamScore(row.getCell(3).getNumericCellValue());
                 students.add(student);
             }
-            return students;
         } catch (IOException e) {
+            logger.error("Reading students from {} failed", fileName, e);
             throw new RuntimeException(e);
         }
+        logger.info("Reading students from {} ended successfully", fileName);
+        return students;
     }
 
     public static List<University> readUniversities(String fileName) {
+        List<University> universities = new ArrayList<>();
         try (XSSFWorkbook workbook = new XSSFWorkbook(new FileInputStream(fileName))) {
+            logger.info("Reading universities from {} started", fileName);
             XSSFSheet sheet = workbook.getSheetAt(1);
             Iterator<Row> rowIterator = sheet.rowIterator();
             rowIterator.next();
-            List<University> universities = new ArrayList<>();
             while (rowIterator.hasNext()) {
                 Row row = rowIterator.next();
                 University university = new University();
@@ -55,9 +63,11 @@ public class ExcelReader {
                         .setMainProfile(StudyProfile.valueOf(row.getCell(4).getStringCellValue()));
                 universities.add(university);
             }
-            return universities;
         } catch (IOException e) {
+            logger.error("Reading universities from {} failed", fileName, e);
             throw new RuntimeException(e);
         }
+        logger.info("Reading universities from {} ended successfully", fileName);
+        return universities;
     }
 }

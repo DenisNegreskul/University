@@ -1,5 +1,7 @@
 package excel;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import statistics.Statistics;
 import org.apache.poi.xssf.usermodel.*;
 
@@ -9,6 +11,8 @@ import java.util.Collection;
 
 public class ExcelWriter {
 
+    private static final Logger logger = LoggerFactory.getLogger(ExcelWriter.class);
+
     private ExcelWriter() {
     }
 
@@ -16,6 +20,7 @@ public class ExcelWriter {
         try (XSSFWorkbook workbook = new XSSFWorkbook();
              FileOutputStream fileOutputStream = new FileOutputStream(fileName)) {
 
+            logger.info("Writing statistics to {} started", fileName);
             XSSFSheet sheet = workbook.createSheet("Статистика");
             XSSFFont font = workbook.createFont();
             font.setBold(true);
@@ -52,7 +57,9 @@ public class ExcelWriter {
 
             workbook.write(fileOutputStream);
         } catch (IOException e) {
+            logger.error("Writing statistics to {} failed", fileName, e);
             throw new RuntimeException(e);
         }
+        logger.info("Writing statistics to {} ended successfully", fileName);
     }
 }
