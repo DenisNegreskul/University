@@ -1,15 +1,29 @@
 package statistics;
 
+import com.google.gson.annotations.SerializedName;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
 import model.StudyProfile;
 
-import java.util.ArrayList;
+import java.io.Serializable;
 import java.util.List;
 
-public class Statistics {
+@XmlRootElement(name = "statisticsEntry")
+@XmlAccessorType(XmlAccessType.NONE)
+public class Statistics implements Serializable {
+    @XmlElement(name = "universityProfile")
+    @SerializedName("Профиль обучения")
     private StudyProfile studyProfile;
+    @XmlElement(name = "avgScore")
+    @SerializedName("Средняя оценка за экзамен по профилю")
     private double avgExamScore;
+    @SerializedName("Количество студентов на данном профиле")
     private int amountOfStudents;
+    @SerializedName("Количество университетов данного профиля")
     private int amountOfUniversities;
+    @SerializedName("Названия университетов данного профиля")
     private List<String> universityNames;
 
     public Statistics() {

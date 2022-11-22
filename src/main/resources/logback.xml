@@ -10,9 +10,9 @@
         <file>${FILE_PATH}/log.xml</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
             <fileNamePattern>${FILE_PATH}/log-%d{yyyy-MM-dd}.%i.xml</fileNamePattern>
-            <maxFileSize>2KB</maxFileSize>
+            <maxFileSize>10KB</maxFileSize>
             <maxHistory>30</maxHistory>
-            <totalSizeCap>10Kb</totalSizeCap>
+            <totalSizeCap>50Kb</totalSizeCap>
         </rollingPolicy>
         <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
             <layout class="ch.qos.logback.classic.log4j.XMLLayout">

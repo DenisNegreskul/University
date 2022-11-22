@@ -1,4 +1,4 @@
-package excel;
+package serialization.excel;
 
 import model.Student;
 import model.StudyProfile;
@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -22,9 +23,9 @@ public class ExcelReader {
     private ExcelReader() {
     }
 
-    public static List<Student> readStudents(String fileName) {
+    public static List<Student> readStudents(Path fileName) {
         List<Student> students = new ArrayList<>();
-        try (XSSFWorkbook workbook = new XSSFWorkbook(new FileInputStream(fileName))) {
+        try (XSSFWorkbook workbook = new XSSFWorkbook(new FileInputStream(fileName.toString()))) {
             logger.info("Reading students from {} started", fileName);
             XSSFSheet sheet = workbook.getSheetAt(0);
             Iterator<Row> rowIterator = sheet.rowIterator();
@@ -46,9 +47,9 @@ public class ExcelReader {
         return students;
     }
 
-    public static List<University> readUniversities(String fileName) {
+    public static List<University> readUniversities(Path fileName) {
         List<University> universities = new ArrayList<>();
-        try (XSSFWorkbook workbook = new XSSFWorkbook(new FileInputStream(fileName))) {
+        try (XSSFWorkbook workbook = new XSSFWorkbook(new FileInputStream(fileName.toString()))) {
             logger.info("Reading universities from {} started", fileName);
             XSSFSheet sheet = workbook.getSheetAt(1);
             Iterator<Row> rowIterator = sheet.rowIterator();

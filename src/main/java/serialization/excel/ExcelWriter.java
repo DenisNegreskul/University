@@ -1,4 +1,4 @@
-package excel;
+package serialization.excel;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -7,6 +7,7 @@ import org.apache.poi.xssf.usermodel.*;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.file.Path;
 import java.util.Collection;
 
 public class ExcelWriter {
@@ -16,9 +17,9 @@ public class ExcelWriter {
     private ExcelWriter() {
     }
 
-    public static void writeStatisticsToFile(Collection<Statistics> statisticsCollection, String fileName) {
+    public static void writeStatisticsToFile(Collection<Statistics> statisticsCollection, Path fileName) {
         try (XSSFWorkbook workbook = new XSSFWorkbook();
-             FileOutputStream fileOutputStream = new FileOutputStream(fileName)) {
+             FileOutputStream fileOutputStream = new FileOutputStream(fileName.toString())) {
 
             logger.info("Writing statistics to {} started", fileName);
             XSSFSheet sheet = workbook.createSheet("Статистика");

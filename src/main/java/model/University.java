@@ -1,15 +1,30 @@
 package model;
 
 import com.google.gson.annotations.SerializedName;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
 import java.io.Serializable;
 
+@XmlRootElement(name = "universityEntry")
+@XmlAccessorType(XmlAccessType.NONE)
 public class University implements Serializable {
-    @SerializedName("ID университета") private String id;
-    @SerializedName("Полное название")private String fullName;
-    @SerializedName("Аббревиатура")private String shortName;
-    @SerializedName("Год основания")private int yearOfFoundation;
-    @SerializedName("Основной профиль обучения")private StudyProfile mainProfile;
+
+    @XmlElement(name = "universityId")
+    @SerializedName("ID университета")
+    private String id;
+    @XmlElement(name = "universityName")
+    @SerializedName("Полное название")
+    private String fullName;
+    @SerializedName("Аббревиатура")
+    private String shortName;
+    @SerializedName("Год основания")
+    private int yearOfFoundation;
+    @XmlElement(name = "universityProfile")
+    @SerializedName("Основной профиль обучения")
+    private StudyProfile mainProfile;
 
     public University() {
     }
